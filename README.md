@@ -39,7 +39,7 @@ Implementations in other languages:
 
 ### Gather Config Values
 
-Before we begin local development, we need to collect all the config values we need to run the application.
+Before we begin local development, we need to collect all the config values we need to run the application. These values will be used in Step 2 below.
 
 | Config Value                           | Description                                                                                                                                                              |
 | :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -56,14 +56,60 @@ Before we begin local development, we need to collect all the config values we n
    git clone https://github.com/TwilioDevEd/voice-javascript-sdk-quickstart-csharp.git
    cd voice-javascript-sdk-quickstart-csharp
    ```
-1. Create a configuration file for your application by copying the `.env.example` and edit the `.env` file with the configuration values from above.
-   ```bash
-   cp .env.example .env
-   ```
-1. Install the dependencies.
-   ```bash
-   npm install
-   ```
+1. Enable DotNet User Secrets. 
+    - [ ] First, navigate to the `Quickstart` directory:
+    ```bash
+    cd Quickstart
+    ```
+
+    - [ ] Run the following command to use User Secrets in your application:
+
+    ```bash
+    dotnet user-secrets init
+    ```
+
+    If you open the `Quickstart.csproj` file, you should now see something like the following:
+
+    ```xml
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>some-guid-here</UserSecretsId>
+    </PropertyGroup>
+    ```
+    Next, we'll save our configuration values using User Secrets. 
+
+    Run each of the following commands in your terminal, making sure you've replaced the BOILERPLATE_TEXT with your actual configuration values we gathered earlier.
+
+    - [ ] 
+        ```bash
+        dotnet user-secrets set TwilioAccountDetails:AccountSid YOUR_ACCOUNT_SID
+        ```
+    - [ ] 
+        ```bash
+        dotnet user-secrets set TwilioAccountDetails:AuthToken YOUR_AUTH_TOKEN
+        ```
+    - [ ]     
+        ```bash
+        dotnet user-secrets set TwilioAccountDetails:TwimlAppSid YOUR_TWIML_APP_SID
+        ```
+    - [ ]     
+        ```bash
+        dotnet user-secrets set TwilioAccountDetails:CallerId YOUR_CALLERID
+        ```
+    - [ ]     
+        ```bash
+        dotnet user-secrets set TwilioAccountDetails:ApiSid YOUR_API_SID
+        ```    
+    - [ ]     
+        ```bash
+        dotnet user-secrets set TwilioAccountDetails:ApiSecret YOUR_API_SECRET
+        ```
+
+    To check that all of your secrets have been saved properly, run the following command:
+
+    ```bash
+    dotnet user-secrets list
+    ``` 
 1. Run the Project. A new browser tab should open [http://localhost:5000](http://localhost:5000).
 1. Expose your application to the wider internet using `ngrok`. This step is **crucial** for the app to work as expected.
    ```bash
@@ -109,12 +155,12 @@ Enter one client's name in the other client's 'Make a Call' input and press the 
 You will first need to configure your Twilio Voice Phone Number to use the TwiML App we created earlier. This tells Twilio how to handle an incoming call directed to your Twilio Voice Number.
 
 1.  Log in to your [Twilio Console](https://www.twilio.com/console)
-2.  Navigate to your [Active Numbers list](https://www.twilio.com/console/phone-numbers/incoming)
-3.  Click on the number you purchased earlier
-4.  Scroll down to find the 'Voice & Fax' section and look for 'CONFIGURE WITH'
-5.  Select 'TwiML' App
-6.  Under 'TWIML APP', choose the TwiML App you created earlier.
-7.  Click the 'Save' button at the bottom of the browser window.
+1.  Navigate to your [Active Numbers list](https://www.twilio.com/console/phone-numbers/incoming)
+1.  Click on the number you purchased earlier
+1.  Scroll down to find the 'Voice & Fax' section and look for 'CONFIGURE WITH'
+1.  Select 'TwiML' App
+1.  Under 'TWIML APP', choose the TwiML App you created earlier.
+1.  Click the 'Save' button at the bottom of the browser window.
 
 ![screenshot of phone number configuration](./screenshots/ConfigurePhoneNumberWithTwiMLApp.png)
 
@@ -125,15 +171,6 @@ You can now call your Twilio Voice Phone Number from your cell or landline phone
 ### Unknown Audio Devices
 
 If you see "Unknown Audio Output Device 1" in the "Ringtone" or "Speaker" devices lists, click the button below the boxes (Seeing "Unknown" Devices?) to have your browser identify your input and output devices.
-
-### Docker
-
-If you have [Docker](https://www.docker.com/) already installed on your machine, you can use our `docker-compose.yml` to setup your project.
-
-1. Make sure you have the project cloned.
-1. Setup the `.env` file as outlined in the [Local Development](#local-development) steps.
-1. Run `docker-compose up`.
-1. Follow the steps in [Local Development](#local-development) on how to expose your port to Twilio using a tool like [ngrok](https://ngrok.com/) and configure the remaining parts of your application.
 
 ## Resources
 
