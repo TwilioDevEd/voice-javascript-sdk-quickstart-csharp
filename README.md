@@ -57,12 +57,12 @@ Before we begin local development, we need to collect all the config values we n
    cd voice-javascript-sdk-quickstart-csharp
    ```
 1. Enable DotNet User Secrets. 
-    - [ ] First, navigate to the `Quickstart` directory:
+    First, navigate to the `Quickstart` directory:
     ```bash
     cd Quickstart
     ```
 
-    - [ ] Run the following command to use User Secrets in your application:
+    Run the following command to use User Secrets in your application:
 
     ```bash
     dotnet user-secrets init
@@ -80,30 +80,24 @@ Before we begin local development, we need to collect all the config values we n
 
     Run each of the following commands in your terminal, making sure you've replaced the BOILERPLATE_TEXT with your actual configuration values we gathered earlier.
 
-    - [ ] 
-        ```bash
-        dotnet user-secrets set TwilioAccountDetails:AccountSid YOUR_ACCOUNT_SID
-        ```
-    - [ ] 
-        ```bash
-        dotnet user-secrets set TwilioAccountDetails:AuthToken YOUR_AUTH_TOKEN
-        ```
-    - [ ]     
-        ```bash
-        dotnet user-secrets set TwilioAccountDetails:TwimlAppSid YOUR_TWIML_APP_SID
-        ```
-    - [ ]     
-        ```bash
-        dotnet user-secrets set TwilioAccountDetails:CallerId YOUR_CALLERID
-        ```
-    - [ ]     
-        ```bash
-        dotnet user-secrets set TwilioAccountDetails:ApiSid YOUR_API_SID
-        ```    
-    - [ ]     
-        ```bash
-        dotnet user-secrets set TwilioAccountDetails:ApiSecret YOUR_API_SECRET
-        ```
+    ```bash
+    dotnet user-secrets set TwilioAccountDetails:AccountSid YOUR_ACCOUNT_SID
+    ```
+    ```bash
+    dotnet user-secrets set TwilioAccountDetails:AuthToken YOUR_AUTH_TOKEN
+    ```
+    ```bash
+    dotnet user-secrets set TwilioAccountDetails:TwimlAppSid YOUR_TWIML_APP_SID
+    ```
+    ```bash
+    dotnet user-secrets set TwilioAccountDetails:CallerId YOUR_CALLERID
+    ```
+    ```bash
+    dotnet user-secrets set TwilioAccountDetails:ApiSid YOUR_API_SID
+    ```    
+    ```bash
+    dotnet user-secrets set TwilioAccountDetails:ApiSecret YOUR_API_SECRET
+    ```
 
     To check that all of your secrets have been saved properly, run the following command:
 
