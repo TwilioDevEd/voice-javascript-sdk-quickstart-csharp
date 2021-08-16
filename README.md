@@ -54,7 +54,7 @@ Before we begin local development, we need to collect all the config values we n
 1. First clone this repository and cd into it:
    ```bash
    git clone https://github.com/TwilioDevEd/voice-javascript-sdk-quickstart-csharp.git
-   cd voice-javascript-sdk-quickstart-sharp
+   cd voice-javascript-sdk-quickstart-csharp
    ```
 1. Create a configuration file for your application by copying the `.env.example` and edit the `.env` file with the configuration values from above.
    ```bash
