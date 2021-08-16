@@ -29,23 +29,23 @@ Implementations in other languages:
 
 ### Create a TwiML Application, Purchase a Phone Number, Create an API Key
 
-1. [Create a TwiML Application in the Twilio Console](https://www.twilio.com/console/voice/twiml/apps). Once you create the TwiML Application, click on it in your list of TwiML Apps to find the TwiML App SID. You will need this SID for your `.env` file. **Note:** You will need to configure the Voice "REQUEST URL" in your TwiML App later.
+1. [Create a TwiML Application in the Twilio Console](https://www.twilio.com/console/voice/twiml/apps). Once you create the TwiML Application, click on it in your list of TwiML Apps to find the TwiML App SID. You will save this SID later to your `user-secrets`. **Note:** You will also need to configure the Voice "REQUEST URL" in your TwiML App later.
    - For detailed instructions with screenshots, see the [Create a TwiML App.md file](ConsoleHowTos/CreateNewTwiMLApp/CreateNewTwiMLApp.md)
-1. [Purchase a Voice phone number](https://www.twilio.com/console/phone-numbers/incoming). You will need this phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) for your `.env` file.
+1. [Purchase a Voice phone number](https://www.twilio.com/console/phone-numbers/incoming). You will need this phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) for your `user-secrets`.
    - For detailed instructions with screenshots, see the [Buy a Phone Number.md file](ConsoleHowTos/BuyVoicePhoneNumber/BuyVoicePhoneNumber.md)
-1. [Create an API Key in the Twilio Console](https://www.twilio.com/console/project/api-keys). Keep the API Key SID and the API Secret in a safe place, since you will need them for your `.env` file. Your API KEY is needed to create an [Access Token](https://www.twilio.com/docs/iam/access-tokens).
+1. [Create an API Key in the Twilio Console](https://www.twilio.com/console/project/api-keys). Keep the API Key SID and the API Secret in a safe place, since you will need them for your `user-secrets`. Your API KEY is needed to create an [Access Token](https://www.twilio.com/docs/iam/access-tokens).
 
    - For detailed instructions with screenshots, see the [Create an API Key.md file](ConsoleHowTos/CreateAPIKey/CreateAPIKey.md)
 
-### Gather Config Values
+### Gather Config Values for your User Secrets
 
-Before we begin local development, we need to collect all the config values we need to run the application. These values will be used in Step 2 below.
+Before we begin local development, we need to collect all the config values we need to run the application. These values will be used in Step 2 below by saving them to your .NET User Secrets.
 
 | Config Value                           | Description                                                                                                                                                              |
 | :------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `AccountSid`                           | Your primary Twilio account identifier - find this [in the console here](https://www.twilio.com/console).                                                                |
-| `AuthToken`                            | Your Twilio Account Auth Token - find this [in the console below your Account SID](https://www.twilio.com/console)                                                       |
-| `TwimlAppSid`                          | The SID of the TwiML App you created in step 1 above. Find the SID [in the console here](https://www.twilio.com/console/voice/twiml/apps).                               |
+| `AccountSid`                           | Your primary Twilio account identifier - find this [in the Twilio Console here](https://www.twilio.com/console).                                                                |
+| `AuthToken`                            | Your Twilio Account Auth Token - find this [in the Twilio Console below your Account SID](https://www.twilio.com/console)                                                       |
+| `TwimlAppSid`                          | The SID of the TwiML App you created in step 1 above. Find the SID [in the Twilio Console here](https://www.twilio.com/console/voice/twiml/apps).                               |
 | `CallerId`                             | Your Twilio phone number in [E.164 format](https://en.wikipedia.org/wiki/E.164) - you can [find your number here](https://www.twilio.com/console/phone-numbers/incoming) |
 | `ApiSid` / `ApiSecret`                 | The `ApiSid` is the API Key SID you created in step 3 above, and the `ApiSecret` is the secret associated with that key.                                                 |
 
