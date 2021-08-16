@@ -56,7 +56,7 @@ Before we begin local development, we need to collect all the config values we n
    git clone https://github.com/TwilioDevEd/voice-javascript-sdk-quickstart-csharp.git
    cd voice-javascript-sdk-quickstart-csharp
    ```
-1. Enable DotNet User Secrets. 
+1. Enable [DotNet User Secrets](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=windows). 
     First, navigate to the `Quickstart` directory:
     ```bash
     cd Quickstart
@@ -104,6 +104,8 @@ Before we begin local development, we need to collect all the config values we n
     ```bash
     dotnet user-secrets list
     ``` 
+
+    To learn more about User Secrets, check out the Twilio Blog post called ["User Secrets in a .NET Core Web App"](https://www.twilio.com/blog/2018/05/user-secrets-in-a-net-core-web-app.html). 
 1. Run the Project. A new browser tab should open [http://localhost:5000](http://localhost:5000).
 1. Expose your application to the wider internet using `ngrok`. This step is **crucial** for the app to work as expected.
    ```bash
